@@ -1,0 +1,136 @@
+:root{
+  --white: #ffffff;
+  --lightpink: #f9f0ff;
+  --grayishpurple: #8c6991;
+  --darkpurple: #2f1533;
+  --shinepurple: #AD28EB;
+  
+  /* fontsize:16px */
+  /* 最大寬度1440px */
+  /* 最小寬度375px */
+}
+
+*{
+    /* border: solid 1px #ccc; */
+    &::before,&::after{
+        box-sizing: border-box;
+    }
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body{
+    font-family: "Work Sans";
+    display: grid;
+    place-content: center;
+    min-height: 120vh;
+    background-color: var(--lightpink);
+    background-image: url(https://raw.githubusercontent.com/tina801005/faqaccordion/0b2456cac9d69c7afbe0303ece788ae1ee112601/images/background-pattern-desktop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.container{
+    max-width: 33rem;
+}
+
+.faqCard{
+    background-color: var(--white);
+    border-radius: 1em;
+    padding: 1.5rem;
+}
+
+.cardTitle{
+    margin: 0;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    &::before{
+        content: "";
+        display: block;
+        background-image: url(https://raw.githubusercontent.com/tina801005/faqaccordion/0b2456cac9d69c7afbe0303ece788ae1ee112601/images/icon-star.svg);
+        width: 1em;
+        height: 1em;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin-right: 1.5rem;
+    }
+}
+.cardText{
+    margin-top: 0.8em;
+}
+.contentBox{
+    border-bottom: solid 1px var(--lightpink);
+}
+.fqaQues{
+    margin: 0;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    cursor: pointer;
+    font-weight: 700;
+    &:hover{
+        color: var(--shinepurple);
+    }
+    &::after{
+        content: "";
+        min-width: 1.5rem;
+        min-height: 1.5rem;
+        background-image: url(https://raw.githubusercontent.com/tina801005/faqaccordion/0b2456cac9d69c7afbe0303ece788ae1ee112601/images/icon-plus.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.quesOpen{
+    &::after{
+        content: "";
+        min-width: 1.5rem;
+        min-height: 1.5rem;
+        background-image: url(https://raw.githubusercontent.com/tina801005/faqaccordion/0b2456cac9d69c7afbe0303ece788ae1ee112601/images/icon-minus.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.fqaAns p{
+    margin: 0;
+    padding-bottom: 1rem;
+    color: var(--grayishpurple);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width:375px) {
+    body{
+        background-image: url(https://raw.githubusercontent.com/tina801005/faqaccordion/0b2456cac9d69c7afbe0303ece788ae1ee112601/images/background-pattern-mobile.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    /* .container{
+        width: 21rem;
+    } */
+
+    .cardTitle{
+        font-size: 1.8rem;
+    }
+
+    .fqaQues{
+        font-size: 1rem;
+    }
+    .fqaAns p{
+        font-size: 0.8rem;
+    }
+}
